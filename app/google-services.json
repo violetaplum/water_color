@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "558602838497",
+    "firebase_url": "https://psychic-doodle.firebaseio.com",
+    "project_id": "psychic-doodle",
+    "storage_bucket": "psychic-doodle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558602838497:android:5a8b63210fe271ef",
+        "android_client_info": {
+          "package_name": "www.practice.com.searchcafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558602838497-hkcof9esd17cuhgg8jvgn32j3njckc0l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.practice.com.searchcafe",
+            "certificate_hash": "f3d5cb2c1781a2d36d70b77e8f56e743832435e9"
+          }
+        },
+        {
+          "client_id": "558602838497-h1ba5g0dikajh56tbe21e5a9jdfqihoa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.practice.com.searchcafe",
+            "certificate_hash": "e1d6d6d56e93ee9524860a496b418076a69532bd"
+          }
+        },
+        {
+          "client_id": "558602838497-r2bqvh227hcia173f0haesm8bshtfmfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ3hYlGf-a0KUEWSNTK452NS-m9rWs2cA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558602838497-r2bqvh227hcia173f0haesm8bshtfmfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
