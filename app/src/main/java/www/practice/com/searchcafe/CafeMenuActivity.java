@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,11 +34,18 @@ public class CafeMenuActivity extends AppCompatActivity {
     private String mId;
     private List<CafeMenu> mCafeMenus;
     private TextView mTotalView;
+    private RadioButton mTakeoutButton;
+    private RadioButton mIndoorButton;
+    private int updateSeat=0;
+    private static int Flag=0;
     private int mTotal = 0;
+    private DatabaseReference mDatabase;
 
     private RecyclerView mRecyclerView;
 
     private FirebaseFirestore mFirestore;
+
+
 
     private List<CafeMenu> createFakeData() {
         List<CafeMenu> items = new ArrayList<>();
@@ -65,13 +74,108 @@ public class CafeMenuActivity extends AppCompatActivity {
         mTotalView = findViewById(R.id.text_view_total_price);
         findViewById(R.id.button_payment).setOnClickListener(l -> {
             Toast.makeText(this, "Thanks for buying", Toast.LENGTH_SHORT).show();
+
             finish();
         });
         mRecyclerView = findViewById(R.id.recycler_view_menus);
         DividerItemDecoration decoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         mRecyclerView.addItemDecoration(decoration);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mTakeoutButton = (RadioButton)findViewById(R.id.takeout_radiobutton);
+        findViewById(R.id.takeout_radiobutton).setOnClickListener(l -> {
+            Toast.makeText(this,"Takeout!",Toast.LENGTH_SHORT).show();
+        });
+        /*mIndoorButton = (RadioButton)findViewById(R.id.indoor_radiobutton);
+        findViewById(R.id.indoor_radiobutton).setOnClickListener(l -> {
+            Toast.makeText(this,"Indoor!",Toast.LENGTH_SHORT).show();
+        });
+        mTakeoutButton.setOnClickListener();
+*/
+        final RadioGroup radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
+        mTakeoutButton = (RadioButton)findViewById(R.id.takeout_radiobutton);
+        mTakeoutButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(CafeMenuActivity.this,R.string.takeout_message,Toast.LENGTH_SHORT).show();
+                Flag = 0;
+            }
+        });
+        mIndoorButton = (RadioButton)findViewById(R.id.indoor_radiobutton);
+        mIndoorButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(CafeMenuActivity.this,R.string.takeout_message,Toast.LENGTH_SHORT).show();
+                Flag = 1;
+            }
+        });
+
     }
+
+    public boolean checkFlag(int Flag)
+    {
+        Flag = this.Flag;
+        if(Flag == 1)
+        {
+            return true;
+        }
+        return true;
+    }
+/*
+    private void GetCurrent(){
+        mFirestore = FirebaseFirestore.getInstance();
+        mFirestore.collection("cafes")
+                .document(mId)
+                .update(
+                        "currentSeats",updateSeat
+                );
+
+    }
+
+
+    @IgnoreExtraProperties
+    public class User
+    {
+        public String username;
+        public String email;
+
+        public User()
+        {
+
+        }
+        public User(String username,String email)
+        {
+            this.username = username;
+            this.email = email;
+        }
+    }
+*/
+    /*private void count() {
+        mFirestore = FirebaseFirestore.getInstance();
+        mFirestore.collection("cafes")
+                .document(mId)
+                .get()
+                .addOnCompleteListener(l -> {
+                    if (l.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : l.getResult()) {
+
+
+                            updateSeat+= Integer.valueOf((String) document.get("currentSeats"));
+
+                            GetCurrent Gc=new GetCurrent(updateSeat);
+
+                        }
+                        updateRecyclerView();
+                    } else {
+                        Log.w(TAG, "Firestore get collection is not successful");
+                    }
+                });
+
+    }
+*/
 
     private void fetchCafeMenus() {
         mFirestore = FirebaseFirestore.getInstance();
@@ -151,6 +255,8 @@ public class CafeMenuActivity extends AppCompatActivity {
             });
         }
     }
+
+
 
     private class MenuAdapter extends RecyclerView.Adapter<MenuHolder> {
 

@@ -9,4 +9,10 @@
     <string name="search">검색</string>
     <string name="payment">구매하기</string>
     <string name="menu">메뉴</string>
+    <string name="takeout">Takeout</string>
+    <string name="indoor">Indoor</string>
+    <string name="takeout_message">Takeout을 선택하셨습니다.</string>
+    <string name="indoor_message">Indoor를 선택하셨습니다.</string>
+
+
 </resources>

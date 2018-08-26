@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "558602838497-38j56vt7sm10q9me7s88qgjubg5pk753.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.practice.com.searchcafe",
+            "certificate_hash": "05f6da67df3245fa9a8768f29bed030dfbc33ac2"
+          }
+        },
+        {
           "client_id": "558602838497-r2bqvh227hcia173f0haesm8bshtfmfs.apps.googleusercontent.com",
           "client_type": 3
         }

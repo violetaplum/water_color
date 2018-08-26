@@ -10,8 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/linear_layout_payment">
-
     </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/takeoutButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/recycler_view_menus"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/takeout_radiobutton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Takeout" />
+
+            <RadioButton
+                android:id="@+id/indoor_radiobutton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Indoor" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linear_layout_payment"
